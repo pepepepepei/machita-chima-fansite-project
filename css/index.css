@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.btn-area {
+  margin-top: 1.875rem;
+  display: flex;
+  gap: 0.625rem;
+
+  @media screen and (width <= 600px) {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  display: inline-block;
+  border: 2px solid #edddbb;
+  color: #000;
+  text-align: center;
+  padding: 0.625rem 1.25rem;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: #edddbb;
+    color: #2c76a1;
+    text-decoration: none;
+  }
+}
+
+.latest-activity-area {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 3.125rem;
+
+  @media screen and (width > 600px) {
+    grid-template-columns: 1fr 1.414fr;
+  }
+
+  h2:first-child {
+    margin-top: 0;
+  }
+}
+
+.latest-posts,
+.latest-youtube {
+  margin-top: 1.25rem;
+}

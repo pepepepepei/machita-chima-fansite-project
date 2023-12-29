@@ -2,11 +2,9 @@
 
 body {
   margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  font-size: 18px;
+  font-family: "Noto Serif JP", serif;
+  font-size: 0.9375rem;
   line-height: 2;
-  min-width: 980px;
 }
 
 p,
@@ -17,8 +15,7 @@ h4,
 h5,
 h6,
 li {
-  margin-top: 0;
-  font-family: "Noto Serif JP", serif;
+  margin-bottom: 0;
 }
 
 img {
@@ -27,16 +24,45 @@ img {
 
 ul {
   margin: 0;
-  padding: 0;
+  padding-left: 1.5rem;
 }
 
 a {
   text-decoration: none;
   color: #2c76a1;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-a:hover {
-  text-decoration: underline;
+.content {
+  --gap: 1.5rem;
+  --full: minmax(var(--gap), 1fr);
+  --content: min(960px, 100% - var(--gap) * 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [content-start] var(--content) [content-end]
+    var(--full) [full-end];
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > :not(.full) {
+    grid-column: content;
+  }
+}
+
+.full {
+  grid-column: full;
+}
+
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 #loading {
@@ -58,57 +84,90 @@ a:hover {
 }
 
 header {
-  width: 960px;
-  height: 100px;
-  margin: 0 auto;
+  background-image: url(../img/bg.webp);
+  background-repeat: no-repeat;
+
+  @media screen and (width <= 600px) {
+    background-size: cover;
+    padding-block: 3rem;
+  }
+
+  @media screen and (600px < width) {
+    background-size: 100%;
+    background-attachment: fixed;
+    padding-block: 74px;
+  }
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (width <= 600px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (600px < width) {
+    justify-content: space-between;
+  }
 }
 
 .logo {
-  float: left;
-  margin-top: 60px;
-  margin-left: 10px;
+  @media screen and (600px < width) {
+    margin-top: -17px; /* flexへの変更前とpx単位で合わせるために設定 */
+    margin-left: 10px;
+  }
+}
+
+.logo-img {
+  @media screen and (width <= 600px) {
+    width: 37.8vw;
+  }
 }
 
 .global_nav {
-  float: right;
-  margin-top: 57px;
-}
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
 
-.global_nav li {
-  float: left;
-  margin: 0 18px;
-  font-size: 24px;
-  list-style: none;
+  @media screen and (width <= 600px) {
+    font-size: 1.25rem;
+    row-gap: 0.5rem;
+    column-gap: 1rem;
+  }
+
+  @media screen and (600px < width) {
+    margin-right: 18px;
+    margin-top: -17px; /* flexへの変更前とpx単位で合わせるために設定 */
+    font-size: 1.5rem;
+    column-gap: 2.25rem;
+  }
 }
 
 .global_nav li a {
   color: #000000;
   font-family: "Darker Grotesque", sans-serif;
+
+  &:hover {
+    border-bottom: 0.075rem solid #000000;
+    padding-bottom: 0.15625rem;
+    text-decoration: none;
+  }
 }
 
-.global_nav li a:hover {
-  border-bottom: 1.2px solid #000000;
-  padding-bottom: 2.5px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#wrap {
-  clear: both;
+main {
   background-color: #ffffff;
-  margin-top: 80px;
-}
-
-.content {
-  width: 960px;
-  margin: 0 auto;
+  padding-block: 3rem;
 }
 
 footer {
   text-align: center;
-  padding: 20px 0;
+  padding-block: 3rem;
   background-color: #f7efe0;
-  font-family: "Noto Serif JP", serif;
 }
 
 footer small {
@@ -122,102 +181,10 @@ textarea:focus {
   outline: 0;
 }
 
-#index {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-}
-
 h2 {
-  font-family: "Noto Serif JP", serif;
+  font-size: 1.6875rem;
   font-weight: 150;
-  padding-top: 50px;
-  margin-bottom: 20px;
   border-bottom: 1px solid #b5a98f;
-}
-
-#index p {
-  padding-top: 50px;
-}
-
-p {
-  font-size: 15px;
-  padding: 15px 0;
-}
-
-.left-content {
-  clear: both;
-  float: left;
-  margin-bottom: 50px;
-}
-
-.right-content {
-  float: right;
-}
-
-.youtube-new {
-  padding-bottom: 185px;
-}
-
-.twitter-timeline {
-  padding-right: 20px;
-}
-
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-#index .content {
-  padding-bottom: 740px;
-}
-
-#index .toabout-btn {
-  float: left;
-  transition: 0.4s;
-  font-size: 15px;
-  font-family: "Noto Serif JP", serif;
-  color: #000000;
-  width: 400px;
-  border: 2px solid #edddbb;
-  text-align: center;
-  padding: 10px 0;
-}
-
-#index .tl-btn {
-  float: left;
-  transition: 0.4s;
-  font-size: 15px;
-  font-family: "Noto Serif JP", serif;
-  color: #000000;
-  width: 400px;
-  border: 2px solid #edddbb;
-  text-align: center;
-  padding: 10px 0;
-  margin-left: 10px;
-}
-
-#index .main-content a {
-  text-decoration: none;
-}
-
-#index .main-content a:hover {
-  text-decoration: none;
-}
-
-#index .toabout-btn:hover {
-  transition: 0.4s;
-  background-color: #edddbb;
-  color: #2c76a1;
-}
-
-#index .tl-btn:hover {
-  transition: 0.4s;
-  background-color: #edddbb;
-  color: #2c76a1;
 }
 
 .icon:before {
@@ -230,14 +197,6 @@ p {
   content: "";
   padding-right: 10px;
   border-left: 9px solid #edddbb;
-}
-
-#profile {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
 }
 
 #profile h3 {
@@ -289,15 +248,6 @@ p {
   margin-bottom: 30px;
 }
 
-#archive {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-  font-family: "Noto Serif JP", serif;
-}
-
 #archive h3 {
   font-weight: 130;
   font-size: 16px;
@@ -308,19 +258,6 @@ p {
   font-weight: 130;
   font-size: 14px;
   padding: 5px 0;
-}
-
-#archive p,
-li {
-  font-weight: 150;
-  font-size: 15px;
-}
-#archive ul {
-  margin-bottom: 30px;
-}
-
-#archive li {
-  margin-left: 20px;
 }
 
 #page_top {
@@ -470,22 +407,48 @@ option {
   background-image: url(../img/yt_icon_rgb.png);
 }
 
-#songs {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-  font-family: "Noto Serif JP", serif;
+#songs h3 {
+  clear: both;
+  font-weight: 130;
+  font-size: 16px;
+  padding: 5px 0;
 }
 
-#information {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-  font-family: "Noto Serif JP", serif;
+#songs #wrap ul {
+  margin-left: 23px;
+  margin-bottom: 30px;
+}
+
+.songs_content p {
+  margin-bottom: 0;
+}
+
+#songs .content .youtube_content {
+  float: left;
+  margin-bottom: 20px;
+}
+
+#songs .content table {
+  float: right;
+  width: 400px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 50px;
+  font-size: 13px;
+}
+
+#songs table tr {
+  border-bottom: 1px solid #b5a98f;
+}
+
+#songs table th {
+  text-align: left;
+  width: 40%;
+}
+
+#songs table td {
+  text-align: left;
+  width: 60%;
 }
 
 #information #wrap .content .container {
@@ -596,15 +559,6 @@ option {
   color: #ffffff;
 }
 
-#info_detail {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-  font-family: "Noto Serif JP", serif;
-}
-
 #info_detail h2 {
   margin-bottom: 0;
 }
@@ -661,14 +615,6 @@ option {
   margin: 20px 10px;
 }
 
-#about {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-}
-
 #about .content {
   padding-bottom: 10px;
 }
@@ -683,15 +629,6 @@ option {
 #about #wrap ul {
   margin-left: 23px;
   padding-top: 15px;
-}
-
-#contact {
-  background-image: url(../img/bg2.png);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-  font-family: "Noto Serif JP", serif;
 }
 
 #contact .content {
@@ -773,15 +710,6 @@ option {
   margin-left: 300px;
 }
 
-#success {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
-  font-family: "Noto Serif JP", serif;
-}
-
 #success h2 {
   font-weight: 150;
   padding-top: 50px;
@@ -796,14 +724,6 @@ option {
 
 #success .success_img img {
   width: 300px;
-}
-
-#timeline {
-  background-image: url(../img/bg.webp);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-  background-size: 100% auto;
 }
 
 #timeline .timeline-h2 {
@@ -856,74 +776,6 @@ option {
 
 @media screen and (max-width: 600px) {
   /* 画面サイズが600px以下の場合に適用 */
-  body {
-    font-size: 28px;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  p {
-    font-size: 28px;
-    padding: 15px 0;
-  }
-
-  h2 {
-    font-family: "Noto Serif JP", serif;
-    font-weight: 150;
-    font-size: 40px;
-    padding-top: 50px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #b5a98f;
-  }
-
-  header {
-    width: auto;
-    margin: 0 5%;
-  }
-
-  .logo {
-    float: none;
-    text-align: center;
-  }
-
-  .logo img {
-    width: 370px;
-  }
-
-  .global_nav {
-    float: none;
-    margin-top: 50px;
-    text-align: center;
-  }
-
-  .global_nav li {
-    display: inline;
-    margin: 0 18px;
-    font-size: 40px;
-    float: none;
-  }
-
-  footer {
-    text-align: center;
-    padding: 100px 0;
-    background-color: #f7efe0;
-    font-family: "Noto Serif JP", serif;
-  }
-
-  footer small {
-    font-size: 25px;
-  }
-
-  #wrap {
-    background-color: #ffffff;
-    margin-top: 160px;
-    padding: 30px 0 0;
-  }
-
-  .content {
-    width: 90%;
-    margin: 0 auto;
-  }
-
   #page_top {
     display: none;
     width: 120px;
@@ -958,72 +810,6 @@ option {
     left: 0;
     margin: auto;
     text-align: center;
-  }
-
-  #index .content {
-    padding-bottom: 300px;
-  }
-
-  #index .left-content {
-    display: none;
-    clear: both;
-    float: left;
-    margin-bottom: 50px;
-  }
-
-  #index .right-content {
-    float: none;
-    position: relative;
-  }
-
-  #index .right-content .frame-wrapper__video {
-    position: relative;
-    padding-bottom: 56.25%;
-  }
-
-  #index .right-content .frame-wrapper__video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  #index h2 {
-    font-size: 40px;
-    margin-bottom: 40px;
-    font-weight: 150;
-  }
-
-  #index p {
-    padding: 15px 0;
-    margin: 50px 0;
-  }
-
-  #index .toabout-btn {
-    float: none;
-    transition: 0.4s;
-    font-size: 28px;
-    font-family: "Noto Serif JP", serif;
-    color: #000000;
-    width: 100%;
-    border: 2px solid #edddbb;
-    text-align: center;
-    padding: 15px 0;
-    margin: 30px 0;
-  }
-
-  #index .tl-btn {
-    float: none;
-    transition: 0.4s;
-    font-size: 28px;
-    font-family: "Noto Serif JP", serif;
-    color: #000000;
-    width: 100%;
-    border: 2px solid #edddbb;
-    text-align: center;
-    padding: 15px 0;
-    margin: 20px 0;
   }
 
   #profile h3 {
@@ -1160,9 +946,10 @@ option {
   }
 
   #archive .content p,
-  li {
+  #archive .content li {
     font-size: 28px;
   }
+
   #archive h3 {
     font-size: 30px;
   }

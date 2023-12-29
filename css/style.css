@@ -323,7 +323,7 @@ h2 {
 }
 
 #archive table th,
-table td {
+#archive table td {
   padding: 5px 0;
   text-align: center;
 }
@@ -774,12 +774,6 @@ option {
   text-decoration: none;
 }
 
-@media screen and (min-width: 601px) {
-  #songs .songs_content_responsible {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 600px) {
   /* 画面サイズが600px以下の場合に適用 */
   #page_top {
@@ -991,12 +985,6 @@ option {
     font-size: 22px;
   }
 
-  #archive table th,
-  table td {
-    padding: 5px 0;
-    text-align: center;
-  }
-
   .yt_play::before {
     /* YouTubeアイコン */
     width: 84px;
@@ -1004,28 +992,6 @@ option {
     transform: translate(-50%, -50%);
     opacity: 0.9;
     transition: 0.5s;
-  }
-
-  #songs .songs_content_pc {
-    display: none;
-  }
-
-  #songs h3 {
-    font-size: 30px;
-  }
-
-  #songs .content .youtube_content {
-    float: none;
-    margin: 0 20px;
-  }
-
-  #songs .content table {
-    float: none;
-    width: 90%;
-    font-size: 24px;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 50px;
   }
 
   #information #wrap .content .container {

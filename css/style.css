@@ -76,11 +76,19 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.8s;
 }
 
-#loading img {
+#loadingImg {
   height: 30%;
   pointer-events: none;
+  transition: 0.3s;
+}
+
+#loading.loaded,
+#loadingImg.loaded {
+  visibility: hidden;
+  opacity: 0;
 }
 
 header {

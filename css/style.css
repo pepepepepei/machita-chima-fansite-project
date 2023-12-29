@@ -57,6 +57,15 @@ a {
   }
 }
 
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -202,6 +211,26 @@ main {
   padding-block: 3rem;
 }
 
+.to-page-top {
+  width: 3.125rem;
+  height: 3.125rem;
+  position: sticky;
+  bottom: 1.5rem;
+  background: #b5a98f;
+  opacity: 0.6;
+  border-radius: 50%;
+  margin-left: auto;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0s;
+}
+
 footer {
   text-align: center;
   padding-block: 3rem;
@@ -228,41 +257,6 @@ footer small {
   font-weight: 130;
   font-size: 14px;
   padding: 5px 0;
-}
-
-#page_top {
-  display: none;
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  right: 100px;
-  bottom: 100px;
-  background: #b5a98f;
-  opacity: 0.6;
-  border-radius: 50%;
-}
-#page_top a {
-  position: relative;
-  display: block;
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-}
-#page_top a::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f102";
-  font-size: 30px;
-  color: #fff;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: -40px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
 }
 
 #archive .main {

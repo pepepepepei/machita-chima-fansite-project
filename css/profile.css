@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.profile-content {
+  display: grid;
+
+  @media screen and (600px < width) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.profile-content-character {
+  @media screen and (600px < width) {
+    grid-column: 2 / 3;
+  }
+}
+
+.profile-content-character-img {
+  width: 100%;
+}
+
+.profile-content-info {
+  @media screen and (600px < width) {
+    grid-row: 1 / 2;
+  }
+}
+
+.platforms {
+  margin-top: 1em;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.platform-link-img {
+  height: 3.125rem;
+
+  &:hover {
+    opacity: 0.4;
+    transition: 0.5s;
+  }
+}

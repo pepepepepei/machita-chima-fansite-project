@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.favorite-thumb {
+  text-align: center;
+  width: min(560px, 100%);
+  margin: auto;
+}

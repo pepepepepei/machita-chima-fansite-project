@@ -24,9 +24,9 @@
               ${songObj.info
                 .map(([key, value]) => {
                   return `
-                    <tr>
-                      <th>${key}</th>
-                      <td>${value}</td>
+                    <tr class="songs-content-body-info-tr">
+                      <th class="songs-content-body-info-th">${key}</th>
+                      <td class="songs-content-body-info-td">${value}</td>
                     </tr>`;
                 })
                 .join("")}

@@ -58,6 +58,7 @@ a {
 }
 
 button {
+  padding: 0;
   appearance: none;
   background: none;
   border: none;
@@ -71,6 +72,16 @@ input[type="email"]:focus,
 textarea:focus {
   border: 2px solid #ffbdc1;
   outline: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding-block: 5px;
 }
 
 .content {
@@ -224,11 +235,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
 }
 
 .invisible {
   visibility: hidden;
-  opacity: 0s;
+  opacity: 0;
 }
 
 footer {
@@ -369,50 +381,6 @@ option {
   /* YouTubeアイコン */
   cursor: pointer;
   background-image: url(../img/yt_icon_rgb.png);
-}
-
-#songs h3 {
-  clear: both;
-  font-weight: 130;
-  font-size: 16px;
-  padding: 5px 0;
-}
-
-#songs #wrap ul {
-  margin-left: 23px;
-  margin-bottom: 30px;
-}
-
-.songs_content p {
-  margin-bottom: 0;
-}
-
-#songs .content .youtube_content {
-  float: left;
-  margin-bottom: 20px;
-}
-
-#songs .content table {
-  float: right;
-  width: 400px;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin-bottom: 50px;
-  font-size: 13px;
-}
-
-#songs table tr {
-  border-bottom: 1px solid #b5a98f;
-}
-
-#songs table th {
-  text-align: left;
-  width: 40%;
-}
-
-#songs table td {
-  text-align: left;
-  width: 60%;
 }
 
 #information #wrap .content .container {
@@ -740,42 +708,6 @@ option {
 
 @media screen and (max-width: 600px) {
   /* 画面サイズが600px以下の場合に適用 */
-  #page_top {
-    display: none;
-    width: 120px;
-    height: 120px;
-    position: fixed;
-    right: 100px;
-    bottom: 200px;
-    background: #b5a98f;
-    opacity: 0.6;
-    border-radius: 50%;
-    z-index: 999;
-  }
-  #page_top a {
-    position: relative;
-    display: block;
-    width: 120px;
-    height: 120px;
-    text-decoration: none;
-  }
-  #page_top a::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f102";
-    font-size: 60px;
-    color: #fff;
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: -75px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    text-align: center;
-  }
-
   #about h3 {
     font-size: 35px;
     margin: 0;

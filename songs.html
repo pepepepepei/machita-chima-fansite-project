@@ -1,37 +1,58 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Songs - 町田ちま 非公式ファンサイト「inocesias.」</title>
+    <meta
+      name="description"
+      content="にじさんじプロジェクト所属バーチャルライバー町田ちまの非公式ファンサイトです。"
+    />
+
+    <!-- OGP -->
+    <meta property="og:title" content="町田ちま 非公式ファンサイト「inocesias.」" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://inocesias.netlify.app/" />
+    <meta property="og:image" content="https://inocesias.netlify.app/img/ogp.png" />
+    <meta property="og:site_name" content="町田ちま 非公式ファンサイト「inocesias.」" />
+    <meta
+      property="og:description"
+      content="にじさんじプロジェクト所属バーチャルライバー町田ちまの非公式ファンサイトです。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/songs.css" />
-    <link rel="icon" href="img/favicon.ico" id="favicon" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" />
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"> -->
 
-    <script defer src="js/util.js"></script>
-    <script defer src="js/jquery-3.6.0.min.js"></script>
-    <script defer src="js/loading.js"></script>
-    <script defer src="js/songs.js"></script>
-    <script defer src="js/pagetop_button.js"></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/songs.css" />
 
-    <meta name="viewport" content="width=device-width" />
+    <!-- My JS -->
+    <script defer src="js/util.js"></script>
+    <script defer src="js/loading.js"></script>
+    <script defer src="js/to_pagetop.js"></script>
+    <script defer src="js/songs.js"></script>
   </head>
 
   <body id="songs">
     <div id="loading"></div>
 
-    <header>
-      <div class="inner">
+    <header class="content">
+      <div class="header-inner">
         <a class="logo" href="/index.html">
           <img class="logo-img" src="/img/logo.png" alt="inocesias." />
         </a>
@@ -47,29 +68,46 @@
       </div>
     </header>
 
-    <div id="wrap">
-      <div class="content">
-        <div id="page_top"><a href="wrap"></a></div>
+    <main class="content">
+      <h2>歌関連　投稿動画</h2>
 
-        <h2>歌関連　投稿動画</h2>
+      <p>これまでに投稿された歌ってみた動画やボーカルでの参加楽曲を掲載しています。</p>
 
-        <p>これまでに投稿された歌ってみた動画やボーカルでの参加楽曲を掲載しています。</p>
+      <ul>
+        <li>
+          町田ちま公式チャンネル内の再生リスト「歌ってみた-Cover
+          Song-」を参考にし、リストアップしています。
+        </li>
+        <li>その他、にじさんじプロジェクトでの参加曲なども可能な限り掲載しています。</li>
+        <li>
+          現在ページについての仕様が固まっていないため、一部表記に揺れがある場合がございます。ご了承ください。
+        </li>
+      </ul>
 
-        <ul class="songs-lead-ul">
-          <li>
-            町田ちま公式チャンネル内の再生リスト「歌ってみた-Cover
-            Song-」を参考にし、リストアップしています。
-          </li>
-          <li>その他、にじさんじプロジェクトでの参加曲なども可能な限り掲載しています。</li>
-          <li>
-            現在ページについての仕様が固まっていないため、一部表記に揺れがある場合がございます。ご了承ください。
-          </li>
-        </ul>
+      <ul class="songs-contents" id="songsContents"></ul>
 
-        <ul class="songs-contents" id="songsContents"></ul>
-      </div>
-    </div>
-    <footer>
+      <button type="button" title="一番上に戻る" class="to-page-top invisible" id="toPageTop">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          fill="currentColor"
+          class="bi bi-chevron-double-up"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+          />
+        </svg>
+      </button>
+    </main>
+
+    <footer class="content">
       <small>Created, Designed by FU　お問い合わせは<a href="contact.html">こちら</a>から。</small>
     </footer>
   </body>

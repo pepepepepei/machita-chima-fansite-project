@@ -383,81 +383,6 @@ option {
   background-image: url(../img/yt_icon_rgb.png);
 }
 
-#information #wrap .content .container {
-  display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 168.9px 168.9px 168.9px;
-  grid-gap: 20px 20px;
-  margin: 0 10px;
-  object-fit: cover;
-}
-
-#information #wrap .content .container li {
-  list-style: none;
-  position: relative;
-}
-
-#information #wrap .content .container li .mask {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-#information #wrap .content .container li:hover .mask {
-  opacity: 1;
-}
-
-#information #wrap .content .container li .mask figcaption {
-  color: #ffffff;
-}
-
-#information #wrap .content .container li figure {
-  margin: 0;
-  width: 300px;
-  color: #ffffff;
-}
-
-#information #wrap .content .container li figure img {
-  width: 300px;
-  height: 168.9px;
-  object-fit: cover;
-}
-
-.tags p {
-  transition: 0.5s;
-  display: inline-block;
-  width: auto;
-  background-color: #ffa199;
-  color: #ffffff;
-  border-radius: 3px;
-  font-family: "Noto Serif JP", serif;
-  padding: 0 10px;
-  margin: 10px;
-  margin-top: 20px;
-  text-decoration: none;
-}
-
-#information .content .container li .tags a:hover {
-  transition: 0.5s;
-  background-color: #ffa199;
-  color: #ffffff;
-}
-
-#information .content .container li .date {
-  font-size: 13px;
-  margin-left: 10px;
-}
-
-#information .content .container li .capture {
-  margin: 0 10px;
-}
-
 .pagination {
   list-style: none;
   display: flex;
@@ -545,22 +470,6 @@ option {
   font-size: 15px;
   padding: 5px 2px;
   margin: 20px 10px;
-}
-
-#about .content {
-  padding-bottom: 10px;
-}
-
-#about h3 {
-  font-size: 18px;
-  margin: 0;
-  padding-top: 20px;
-  font-weight: lighter;
-}
-
-#about #wrap ul {
-  margin-left: 23px;
-  padding-top: 15px;
 }
 
 #contact .content {
@@ -708,22 +617,6 @@ option {
 
 @media screen and (max-width: 600px) {
   /* 画面サイズが600px以下の場合に適用 */
-  #about h3 {
-    font-size: 35px;
-    margin: 0;
-    padding-top: 20px;
-    font-weight: lighter;
-  }
-
-  #about #wrap ul {
-    margin-left: 23px;
-    padding-top: 15px;
-  }
-
-  #about .content ul li {
-    font-size: 28px;
-  }
-
   #archive .sidebar {
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 1;

@@ -3,3 +3,70 @@
 header {
   background-image: url(../img/bg2.png);
 }
+
+.form {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+
+  @media screen and (600px < width) {
+    max-width: 800px;
+    grid-template-columns: min-content auto;
+  }
+}
+
+.form-question {
+  @media screen and (600px < width) {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+  }
+}
+
+.form-question-text {
+  @media screen and (600px < width) {
+    text-wrap: nowrap;
+    padding-block: 0.5rem;
+  }
+}
+
+.required:after {
+  content: " * ";
+  color: #ff0000;
+}
+
+.form-question-input {
+  @media screen and (600px < width) {
+    max-width: 350px;
+  }
+}
+
+.recaptcha {
+  @media screen and (600px < width) {
+    grid-column: 2 / 3;
+  }
+}
+
+.submit_btn {
+  transition: 0.4s;
+  background-color: #b5a98f;
+  color: #ffffff;
+  width: 100px;
+  border-radius: 5px;
+  border: 3px solid #b5a98f;
+
+  @media screen and (600px < width) {
+    grid-column: 2 / 3;
+  }
+
+  &:hover {
+    background-color: #ffffff;
+    color: #b5a98f;
+  }
+}
+
+.form-notes {
+  @media screen and (600px < width) {
+    grid-column: 2 / 3;
+  }
+}
